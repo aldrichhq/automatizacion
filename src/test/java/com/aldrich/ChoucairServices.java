@@ -18,7 +18,7 @@ public class ChoucairServices {
 	private WebDriver driver;    // objeto webdriver
 	
 	By servicesLinkLocator = By.linkText("Servicios");
-	By servicesPageLocator = By.xpath("//img[@src='https://www.choucairtesting.com/wp-content/uploads/2018/11/Banner-pag-interna.jpg.webp']");
+	By servicesPageLocator = By.xpath("//div[@class='elementor-element elementor-element-bd039e7 elementor-widget elementor-widget-image animated fadeIn']//img[@class='attachment-full size-full']");
 	By cookiesBtnLocator = By.id("cookie_action_close_header");
 	By mainContainerElement3 = By.linkText("Portafolio de Soluciones");
 	
@@ -37,7 +37,7 @@ public class ChoucairServices {
 	public void testEnterChoucairServices() throws InterruptedException // test 1
 	{
 		driver.findElement(servicesLinkLocator).click();                  // Click en servicios
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		
 		if(driver.findElement(servicesPageLocator).isDisplayed())        // imagen servicios mostrada / caso prueba CP_Add2
 		{
@@ -50,24 +50,24 @@ public class ChoucairServices {
 			System.out.print("Pagina de servicios NO encontrada");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 	}
 	
 	@Test
 	public void testServicesItems() throws InterruptedException    //  test2
 	{
 		driver.findElement(servicesLinkLocator).click();                    // click servicios
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 		
 		if(driver.findElement(servicesPageLocator).isDisplayed())          // imagen servicios mostrada
 		{
 			driver.findElement(cookiesBtnLocator).click();                  // acepta cookies
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 			System.out.println("Pagina de servicios encontrada");
 			
 			driver.findElement(mainContainerElement3).click();              // click portafolio soluciones
 			System.out.println("Usuario ubicado en los items de servicios");
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 			
 			List<WebElement> divIcons = driver.findElements(By.className("elementor-image-box-title"));  // iconos portafolio
 			String infoTitles[] = {"Digital Performance Management","Pruebas para aplicativos móviles","Pruebas para Business Intelligence","Pruebas de Usabilidad",
@@ -76,14 +76,14 @@ public class ChoucairServices {
 								"Pruebas de Nómina","Pruebas de Seguridad","Alta automatización","Cursos y Certificaciones"};  // titulos info mostrada
 			                                                                                                                 
 			Actions actions = new Actions(driver);
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 			int j = 0;
 			for(int i=3;i<19;i+=1)                // recorre los iconos de portafolio
 			{
 				WebElement element = driver.findElement(By.linkText(divIcons.get(i).getText()));  
 				actions.moveToElement(element).click().perform();                     // click en cada icono
 				
-				driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 				try {
 				assertEquals(divIcons.get(i).getText(), infoTitles[j]);     // compara titulo icono con titulo info mostrada
 				}                                                          // Caso de prueba CP_add4
@@ -100,7 +100,7 @@ public class ChoucairServices {
 		{
 			System.out.print("Pagina de servicios NO encontrada");
 		}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 	}
 	
 	@After
