@@ -25,11 +25,11 @@ public class ChoucairServices extends Base {
 		if(isDisplayed(servicioLocator))	{
 			
 			click(coockienBtn);
- 			print("Pestaña Servicios OK");
+ 			print("Pestaï¿½a Servicios OK");
 		}
 		else 
 		{
-			print("Pestaña Servicios ");
+			print("Pestaï¿½a Servicios ");
 		}
 		
 		time(5);

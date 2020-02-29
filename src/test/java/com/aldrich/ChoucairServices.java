@@ -42,7 +42,7 @@ public class ChoucairServices {
 		if(driver.findElement(servicesPageLocator).isDisplayed())        // imagen servicios mostrada / caso prueba CP_Add2
 		{
 			driver.findElement(cookiesBtnLocator).click();                    // acepta cookies
-			assertEquals("Servicios – Choucair Testing", driver.getTitle());   // compara titulo pestanna / caso prueba CP_Add1
+			assertEquals("Servicios ï¿½ Choucair Testing", driver.getTitle());   // compara titulo pestanna / caso prueba CP_Add1
 			System.out.print("Pagina de servicios encontrada");
 		}
 		else 
@@ -70,10 +70,10 @@ public class ChoucairServices {
 			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 			
 			List<WebElement> divIcons = driver.findElements(By.className("elementor-image-box-title"));  // iconos portafolio
-			String infoTitles[] = {"Digital Performance Management","Pruebas para aplicativos móviles","Pruebas para Business Intelligence","Pruebas de Usabilidad",
-								"Pruebas contables y financieras","Pruebas de Desempeño","Pruebas de Migración","Pruebas generalistas","Automatización de Pruebas SAP",
-								"Automatización de Pruebas","Administración de Ambientes de Pruebas","Automatización de Pruebas para Switches transaccionales",
-								"Pruebas de Nómina","Pruebas de Seguridad","Alta automatización","Cursos y Certificaciones"};  // titulos info mostrada
+			String infoTitles[] = {"Digital Performance Management","Pruebas para aplicativos mï¿½viles","Pruebas para Business Intelligence","Pruebas de Usabilidad",
+								"Pruebas contables y financieras","Pruebas de Desempeï¿½o","Pruebas de Migraciï¿½n","Pruebas generalistas","Automatizaciï¿½n de Pruebas SAP",
+								"Automatizaciï¿½n de Pruebas","Administraciï¿½n de Ambientes de Pruebas","Automatizaciï¿½n de Pruebas para Switches transaccionales",
+								"Pruebas de Nï¿½mina","Pruebas de Seguridad","Alta automatizaciï¿½n","Cursos y Certificaciones"};  // titulos info mostrada
 			                                                                                                                 
 			Actions actions = new Actions(driver);
 			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);

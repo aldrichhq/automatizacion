@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ LoginTest.class /*, AltaNuevaTest.class */})
+@SuiteClasses({ ValidateLinkTest.class /*, AltaNuevaTest.class */})
 public class AllTests {
 
 }
