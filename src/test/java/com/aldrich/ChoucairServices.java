@@ -15,26 +15,26 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ChoucairServices {
 	
-	private WebDriver driver;    // objeto webdriver
+	private WebDriver driver;
 	
 	By servicesLinkLocator = By.linkText("Servicios");
 	By servicesPageLocator = By.xpath("//div[@class='elementor-element elementor-element-bd039e7 elementor-widget elementor-widget-image animated fadeIn']//img[@class='attachment-full size-full']");
 	By cookiesBtnLocator = By.id("cookie_action_close_header");
 	By mainContainerElement3 = By.linkText("Portafolio de Soluciones");
 	
-	@Before                    // anotacion 1. JUnit
-	public void setUp()       // metodo de configuracion
+	@Before
+	public void setUp()
 	
 	{
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
-		driver = new ChromeDriver();                                 // declaracion objeto driver
-		driver.manage().window().maximize();                        // crea ventana simulador chrome
-		driver.get("https://www.choucairtesting.com");             // url a consultar
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.choucairtesting.com");
 		
 	}
 	
 	@Test
-	public void testEnterChoucairServices() throws InterruptedException // test 1
+	public void testEnterChoucairServices() throws InterruptedException
 	{
 		driver.findElement(servicesLinkLocator).click();                  // Click en servicios
 		driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);

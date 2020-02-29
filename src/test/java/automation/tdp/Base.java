@@ -1,6 +1,7 @@
 package automation.tdp;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -61,6 +62,15 @@ public class Base {
 	
 	public void visit(String url) {
 		driver.get(url);
+	}
+	
+	public void time(int i) {
+		driver.manage().timeouts().implicitlyWait(i, TimeUnit.SECONDS);
+	}
+	
+	public void print(String x) {
+		System.out.println(x);
+		
 	}
 
 }
